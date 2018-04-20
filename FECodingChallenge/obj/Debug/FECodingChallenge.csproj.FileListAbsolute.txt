@@ -1,0 +1,7 @@
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\bin\Debug\FECodingChallenge.exe.config
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\bin\Debug\FECodingChallenge.exe
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\bin\Debug\FECodingChallenge.pdb
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\obj\Debug\FECodingChallenge.csprojResolveAssemblyReference.cache
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\obj\Debug\FECodingChallenge.csproj.CoreCompileInputs.cache
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\obj\Debug\FECodingChallenge.exe
+C:\Users\carl gramata\source\repos\FECodingChallenge\FECodingChallenge\obj\Debug\FECodingChallenge.pdb
