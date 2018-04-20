@@ -8,10 +8,7 @@ namespace FECodingChallenge.Library
 {
     public class DashAssigner
     {
-        /*
-        * Assigns the number of dashes in front of the word
-        * param: string input
-        */
+        // Assigns the number of dashes in front of the word
         public ArrayList IterativePrint(string input)
         {
             StringCleanUp stringCleanUp = new StringCleanUp();
@@ -32,23 +29,22 @@ namespace FECodingChallenge.Library
             {
                 string trimmedEntry = entry.Trim(' ');
 
-                //condition if the string has both '(' and ')'
+                //condition if the entry has both '(' and ')'
                 if (trimmedEntry.Contains('(') && trimmedEntry.Contains(')'))
-                {
-                  
+                { 
                    numberOfDashes = conditionLogic.OpenAndCloseParenLogic(trimmedEntry, numberOfDashes, resultList);
                 }
-                //condition if the string only has '('
+                //condition if the entry only has '('
                 if (trimmedEntry.Contains('(') && !trimmedEntry.Contains(')'))
                 {
                     numberOfDashes = conditionLogic.OpenParenLogic(trimmedEntry, numberOfDashes, resultList);
                 }
-                //condition if the string only has ')'
+                //condition if the entry only has ')'
                 if (trimmedEntry.Contains(')') && !trimmedEntry.Contains('('))
                 {
                     numberOfDashes = conditionLogic.CloseParenLogic(trimmedEntry, numberOfDashes, resultList);
                 }
-                //condition if the string has no parenthesis
+                //condition if the entry has no parenthesis
                 if (!trimmedEntry.Contains('(') && !trimmedEntry.Contains(')'))
                 {
                     conditionLogic.NoParenLogic(trimmedEntry, numberOfDashes, resultList);

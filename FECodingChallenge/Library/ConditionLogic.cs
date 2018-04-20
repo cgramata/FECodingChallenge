@@ -10,20 +10,34 @@ namespace FECodingChallenge.Library
 {
     public class ConditionLogic
     {
+        //logic if the entry has both '(' and ')'
         public int OpenAndCloseParenLogic(string input, int numberOfDashes, ArrayList resultList)
         {
             string[] splitEntry = input.Split('(');
-            string dashes = new String('-', numberOfDashes);
-            AddNoneEmptyString(dashes + ' ' + splitEntry[0], resultList);
+            
+            if (numberOfDashes > 0)
+            {
+                string dashes = new String('-', numberOfDashes);
+                AddNoneEmptyString(dashes + ' ' + splitEntry[0], resultList);
 
-            numberOfDashes++;
-            dashes = new String('-', numberOfDashes);
-            AddNoneEmptyString(dashes + ' ' + splitEntry[1].Trim(')'), resultList);
-            numberOfDashes--;
+                numberOfDashes++;
+                dashes = new String('-', numberOfDashes);
+                AddNoneEmptyString(dashes + ' ' + splitEntry[1].Trim(')'), resultList);
+                numberOfDashes--;
+            }
+            else
+            {
+                AddNoneEmptyString(splitEntry[0], resultList);
 
+                numberOfDashes++;
+                string dashes = new String('-', numberOfDashes);
+                AddNoneEmptyString(dashes + ' ' + splitEntry[1].Trim(')'), resultList);
+                numberOfDashes--;
+            }
             return numberOfDashes;
         }
 
+        //logic if the entry only has '('
         public int OpenParenLogic(string input, int numberOfDashes, ArrayList resultList)
         {
             string[] splitEntry = input.Split('(');
@@ -48,6 +62,7 @@ namespace FECodingChallenge.Library
             return numberOfDashes;
         }
 
+        //logic if the entry only has ')'
         public int CloseParenLogic(string input, int numberOfDashes, ArrayList resultList)
         {
             string[] splitEntry = input.Split(')');
@@ -59,6 +74,7 @@ namespace FECodingChallenge.Library
             return numberOfDashes;
         }
 
+        //logic if the entry has no parenthesis
         public void NoParenLogic(string input, int numberOfDashes, ArrayList resultList)
         {
             if (numberOfDashes > 0)
@@ -72,6 +88,7 @@ namespace FECodingChallenge.Library
             }
         }
 
+        //only adds strings to the ArrayList if they're not empty
         public void AddNoneEmptyString(object input, ArrayList resultList)
         {
             if (input.Equals(string.Empty) == false)
