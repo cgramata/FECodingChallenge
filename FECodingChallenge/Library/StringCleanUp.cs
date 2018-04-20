@@ -3,10 +3,10 @@
 namespace FECodingChallenge.Library
 {
     //class that contains method(s) that will help with the clean up of a string
-    public static class StringCleanUp
+    public class StringCleanUp
     {
         //removes the outer parenthesis of the string 
-        public static string RemoveOuterParens(string input)
+        public string RemoveOuterParens(string input)
         {
             int inputLength = input.Length;
             string cleanedInput = input;

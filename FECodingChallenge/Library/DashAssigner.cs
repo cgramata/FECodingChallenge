@@ -3,16 +3,26 @@ using System.Collections;
 using System.Linq;
 using FECodingChallenge.Library;
 
+
 namespace FECodingChallenge.Library
 {
     public class DashAssigner
     {
-
+        /*
+        * Assigns the number of dashes in front of the word
+        * param: string input
+        */
         public ArrayList IterativePrint(string input)
         {
-            int numberOfDashes = 0;
+            StringCleanUp stringCleanUp = new StringCleanUp();
+
+            //Cleans the input string up
+            //Note: replacing the spaces only needed one line of code, separate method was not needed
             string cleanedInput = input.Replace(" ", "");
-            cleanedInput = StringCleanUp.RemoveOuterParens(cleanedInput);
+            cleanedInput = stringCleanUp.RemoveOuterParens(cleanedInput);
+
+            int numberOfDashes = 0;
+            
             string[] splitInput = cleanedInput.Split(',');
             ArrayList resultList = new ArrayList();
 

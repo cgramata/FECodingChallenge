@@ -15,12 +15,10 @@ namespace FECodingChallenge.Library
             string[] splitEntry = input.Split('(');
             string dashes = new String('-', numberOfDashes);
             AddNoneEmptyString(dashes + ' ' + splitEntry[0], resultList);
-            //resultList.Add(dashes + ' ' + splitEntry[0]);
 
             numberOfDashes++;
             dashes = new String('-', numberOfDashes);
             AddNoneEmptyString(dashes + ' ' + splitEntry[1].Trim(')'), resultList);
-            //resultList.Add(dashes + ' ' + splitEntry[1].Trim(')'));
             numberOfDashes--;
 
             return numberOfDashes;
@@ -28,28 +26,24 @@ namespace FECodingChallenge.Library
 
         public int OpenParenLogic(string input, int numberOfDashes, ArrayList resultList)
         {
+            string[] splitEntry = input.Split('(');
+            
             if (numberOfDashes > 0)
             {
-                string[] splitEntry = input.Split('(');
                 string dashes = new String('-', numberOfDashes);
                 AddNoneEmptyString(dashes + ' ' + splitEntry[0], resultList);
-                //resultList.Add(dashes + ' ' + splitEntry[0]);
 
                 numberOfDashes++;
                 dashes = new String('-', numberOfDashes);
                 AddNoneEmptyString(dashes + ' ' + splitEntry[1], resultList);
-                //resultList.Add(dashes + ' ' + splitEntry[1]);
             }
             else
             {
-                string[] splitEntry = input.Split('(');
                 AddNoneEmptyString(splitEntry[0], resultList);
-                //resultList.Add(dashes + ' ' + splitEntry[0]);
 
                 numberOfDashes++;
                 string dashes = new String('-', numberOfDashes);
                 AddNoneEmptyString(dashes + ' ' + splitEntry[1], resultList);
-                //resultList.Add(dashes + ' ' + splitEntry[1]);
             }
             return numberOfDashes;
         }
@@ -59,7 +53,6 @@ namespace FECodingChallenge.Library
             string[] splitEntry = input.Split(')');
             string dashes = new String('-', numberOfDashes);
             AddNoneEmptyString(dashes + ' ' + splitEntry[0], resultList);
-            //resultList.Add(dashes + ' ' + splitEntry[0]);
 
             numberOfDashes--;
 
@@ -72,18 +65,16 @@ namespace FECodingChallenge.Library
             {
                 string dashes = new String('-', numberOfDashes);
                 AddNoneEmptyString(dashes + ' ' + input, resultList);
-                //resultList.Add(dashes + ' ' + input);
             }
             else
             {
                 AddNoneEmptyString(input, resultList);
-                //resultList.Add(input);
             }
         }
 
-        public void AddNoneEmptyString(string input, ArrayList resultList)
+        public void AddNoneEmptyString(object input, ArrayList resultList)
         {
-            if (!input.Equals(" "))
+            if (input.Equals(string.Empty) == false)
             {
                 resultList.Add(input);
             }
